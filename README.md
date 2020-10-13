@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :orders
+- has_many :purchases
 
 ## items
 
@@ -35,25 +35,30 @@
 ## Association
 
 - belongs_to :user
-- belongs_to :order
+- belongs_to :purchase
 
 ## orders
+
+| Column        | Type       | Options     |
+| ------------- | ---------- | ----------- |
+| postal_code   | string     | null: false |
+| prefecture    | integer    | null: false |
+| city          | string     | null: false |
+| house_number  | string     | null: false |
+| building_name | string     |             |
+| phone         | string     | null: false |
+
+## Association
+-belongs_to :purchase
+
+## purchase
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| credit_number | integer    | null: false                    |
-| credit_month  | integer    | null: false                    |
-| credit_year   | integer    | null: false                    |
-| credit_cvc    | integer    | null: false                    |
-| postal_code   | string     | null: false                    |
-| prefecture    | integer    | null: false                    |
-| city          | string     | null: false                    |
-| house_number  | string     | null: false                    |
-| building_name | string     |                                |
-| phone         | string     | null: false                    |
 | user          | references | null: false, foreign_key: true |
-| items         | references | null: false, foreign_key: true |
+| item          | references | null: false, foreign_key: true |
 
 ## Association
 
 -belongs_to :user
+-belongs_to :order
 -belongs_to :item
