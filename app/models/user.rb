@@ -9,7 +9,8 @@ class User < ApplicationRecord
     validates :family_name, format: { with: /\A[あ-んア-ン一-龥]+\z/i }
     validates :first_name, format: { with: /\A[あ-んア-ン一-龥]+\z/i } 
     validates :family_name_reading, format: { with: /\A[ア-ン]+\z/i }
-    validates :first_name_reading, format: { with: /\A[ア-ン]+\z/i}
+    validates :first_name_reading, format: { with: /\A[ア-ン]+\z/i }
     validates :birthday
   end
+  has_many :itmes
 end
