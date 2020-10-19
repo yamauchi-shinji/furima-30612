@@ -3,7 +3,7 @@ function action (){
   const price = document.getElementById("item-price");
   price.addEventListener('input', (event) => {
     const fee = Math.floor(price.value * tax)
-    document.getElementById("add-tax-price").textContent = fee
+    document.getElementById("add-tax-price").textContent = fee.toLocaleString()
     const income = price.value - fee
     document.getElementById("profit").textContent = income.toLocaleString()
   });
