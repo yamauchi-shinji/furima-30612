@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :move_to_index, only: [:index, :create]
   def index
-    @item = Item.find(params[:item_id])
   end
 
   def create
@@ -12,7 +11,6 @@ class OrdersController < ApplicationController
       @purchase_order.save
       redirect_to root_path
     else
-      @item = Item.find(params[:item_id])
       render :index
     end
   end
