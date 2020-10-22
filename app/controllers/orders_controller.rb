@@ -33,7 +33,7 @@ class OrdersController < ApplicationController
   def move_to_index
     if params[:id].present?
       @item = Item.find(params[:id])
-    elsif params[:item_id]
+    elsif params[:item_id].present?
       @item = Item.find(params[:item_id])
     else
       redirect_to root_path
