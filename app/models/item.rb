@@ -13,4 +13,11 @@ class Item < ApplicationRecord
   has_one_attached :image
   belongs_to :user
   has_one :purchase
+  def self.search(search)
+    if search != ""
+      Item.where('product LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end
