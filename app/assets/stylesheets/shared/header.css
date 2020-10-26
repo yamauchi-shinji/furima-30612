@@ -57,7 +57,6 @@
 .lists-left {
   display: flex;
   min-width: 200px;
-
 }
 
 .category-list {
@@ -101,4 +100,22 @@
 .sign-up {
   text-decoration: none;
   color: #333333;
+}
+
+.show-lists{
+  width: 220px;
+  position: absolute;
+  left: 15vw;
+  top: 15vh;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.hidden{
+  display: none;
+}
+
+.pull-down-list{
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #eee;
 }

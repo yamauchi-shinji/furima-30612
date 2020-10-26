@@ -23,7 +23,11 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
+    if params[:category_id].present?
+      @items = Item.where("category_id = ?", params[:category_id]).order("created_at DESC")
+    else
+      @items = Item.search(params[:keyword])
+    end
   end
 
   def edit
