@@ -2,7 +2,7 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <%= link_to image_tag("furima-logo-color.png", class:"furima-icon"), "/" %>
-    <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form_with(url: search_items_path, id: 'search-form', local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "キーワードから探す", class: 'input-box' %>
       <%= button_tag type: :submit, class: "search-button" do %>
         <%= image_tag "search.png", class:"search-icon" %>
@@ -12,7 +12,7 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li class="category-list" id="lists">カテゴリー</li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <ul class='lists-right'>
@@ -23,6 +23,18 @@
         <li><%= link_to 'ログイン', user_session_path, class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
+    </ul>
+    <ul class="show-lists hidden" id="pull-down">
+      <li class="pull-down-list" value="1">レディース</li>
+      <li class="pull-down-list" value="2">メンズ</li>
+      <li class="pull-down-list" value="3">ベビー・キッズ</li>
+      <li class="pull-down-list" value="4">インテリア・住まい・小物</li>
+      <li class="pull-down-list" value="5">本・音楽・ゲーム</li>
+      <li class="pull-down-list" value="6">おもちゃ・ホビー・グッズ</li>
+      <li class="pull-down-list" value="7">家電・スマホ・カメラ</li>
+      <li class="pull-down-list" value="8">スポーツ・レジャー</li>
+      <li class="pull-down-list" value="9">ハンドメイド</li>
+      <li class="pull-down-list" value="10">その他</li>
     </ul>
   </div>
 </header>
