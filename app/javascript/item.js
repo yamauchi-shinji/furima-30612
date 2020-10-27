@@ -8,4 +8,6 @@ function action (){
     document.getElementById("profit").textContent = income.toLocaleString()
   });
 }
-setInterval(action, 1000);
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) { 
+  setInterval(action, 1000);
+}
