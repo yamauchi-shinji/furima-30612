@@ -14,4 +14,5 @@ class User < ApplicationRecord
   end
   has_many :itmes
   has_many :purchases
+  has_many :messages
 end
